@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LEARNING REALM</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><div><b>LEARNING REALM</b><span>學習者 MMORPG · SEASON 02</span></div><aside><span id="levelTop">LV.05</span><span id="goldTop">350 G</span><span id="energyTop">ENERGY 82/100</span></aside></header>
+<div class="layout">
+<nav>
+  <div class="player"><strong>PLAYER</strong><b id="levelSide">LV.05</b><span>冒險者</span></div>
+  <div class="xpbox"><div class="row"><small>經驗值</small><small id="xpText">340 / 500 XP</small></div><div class="bar"><i id="xpBar"></i></div></div>
+  <button class="nav active" data-p="home">主城</button><button class="nav" data-p="quests">任務</button><button class="nav" data-p="arena">試煉場</button><button class="nav" data-p="shop">商店</button><button class="nav" data-p="inventory">背包</button><button class="nav" data-p="skills">技能</button>
+  <div class="side-stat"><span>知識 <b id="knowledgeSide">12</b></span><span>連續 <b id="streakSide">1 天</b></span><span>完成 <b id="doneSide">2</b></span></div>
+  <button class="reset" id="resetBtn">重置存檔</button>
+</nav>
+<main>
+<section id="home" class="page active">
+ <div class="hero"><div><small>MAIN QUEST / REAL LIFE</small><h1>今天也要升級。</h1><p>把作業、閱讀、整理與學習變成 RPG 任務。完成它們，角色就會成長。</p><button data-go="quests">查看任務</button> <button class="ghost" id="randomEventBtn">觸發隨機事件</button></div><div class="terminal" id="eventLog">SYSTEM ONLINE<br>PLAYER READY<br><br>可互動系統：任務 / 試煉 / 商店 / 裝備</div></div>
+ <h2>今日狀態</h2><div class="cards"><article>LEVEL<strong id="levelHome">05</strong><small>冒險者</small></article><article>GOLD<strong id="goldHome">350 G</strong><small>可購買裝備與道具</small></article><article>ENERGY<strong id="energyHome">82 / 100</strong><small>完成任務會消耗能量</small></article><article>KNOWLEDGE<strong id="knowledgeHome">12 P</strong><small>學習成長資源</small></article></div>
+ <h2>主線進度</h2><div class="panel"><div class="row"><b>本週學習冒險</b><span id="mainText">2 / 5</span></div><div class="bar big"><i id="mainBar"></i></div><small>完成 5 個任務即可取得「初階學者」稱號</small></div>
+ <h2>快捷操作</h2><div class="quick"><button data-go="quests">接取任務</button><button data-go="arena">進入試煉</button><button data-go="shop">逛商店</button><button data-go="inventory">查看裝備</button></div>
+</section>
+<section id="quests" class="page"><div class="head"><div><small>QUEST BOARD</small><h1>任務看板</h1><p>每個任務都有成本與獎勵。完成後不能重複領取。</p></div><button id="addQuestBtn">＋ 新增任務</button></div><div id="questList"></div></section>
+<section id="arena" class="page"><small>TRAINING ARENA</small><h1>知識試煉場</h1><p>答對題目可以直接獲得 XP、知識點與金幣。答錯不會扣除資源。</p><div class="arenaBox"><div class="row"><span id="questionCount">QUESTION 01</span><span id="arenaReward">+25 XP · +15 G</span></div><h2 id="question">載入題目中...</h2><div id="answers" class="answers"></div><div id="quizResult" class="result">選一個答案開始試煉。</div><button class="ghost" id="nextQuestion" disabled>下一題</button></div><div class="panel"><b>試煉紀錄</b><p id="arenaStats">本次答對 0 題 / 0 題</p></div></section>
+<section id="shop" class="page"><small>MERCHANT</small><h1>冒險者商店</h1><p>使用金幣購買可以幫助你學習與完成任務的道具。</p><div id="shopList" class="shopgrid"></div></section>
+<section id="inventory" class="page"><small>INVENTORY</small><h1>背包與裝備</h1><div class="inventory"><div class="panel"><div class="row"><b>已裝備</b><span id="equipPower">POWER 0</span></div><div id="equippedList"></div></div><div class="panel"><b>背包</b><div id="bagList"></div></div></div></section>
+<section id="skills" class="page"><small>SKILL TREE</small><h1>技能樹</h1><p>用知識點解鎖技能。技能會永久留在存檔中。</p><div id="skillList" class="skillgrid"></div></section>
+</main></div>
+<script src="script.js"></script></body></html>
